@@ -67,6 +67,22 @@ end
 # p testdup
 # p tester
 
+def fib(n)
+
+  return [] if n <= 0
+  return [0] if n == 1
+  return [0,1] if n == 2
+
+  last_fib = fib(n-1)
+  last_fib << last_fib[-1] + last_fib[-2]
+  
+end
+
+# p fib(7)
+# p fib(10)
+
+
+
 
 
  
