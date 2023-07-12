@@ -35,17 +35,23 @@ end
 def expo(b, n)
   return 1 if n == 0
   return b if n == 1
-
-  if n % 2 == 0
-    exp(b, n/2) * exp(b, n/2)
-    
-  end
-  if n % 2 != 0
-    b * exp(b, (n-1)/2) * exp(b, (n-1)/2)
   
+  if n % 2 == 0
+    even_exp = expo(b, n/2)
+    even_exp * even_exp
+  else 
+    odd_exp = expo(b, (n-1)/2)
+    b * odd_exp * odd_exp
   end
 end
 
 p expo(3, 0)
 p expo(2, 5)
-p expo(3, 9)
+p expo(3, 8)
+
+class Array
+    def dup
+        
+    end
+end
+
