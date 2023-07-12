@@ -45,13 +45,25 @@ def expo(b, n)
   end
 end
 
-p expo(3, 0)
-p expo(2, 5)
-p expo(3, 8)
 
 class Array
-    def dup
-        
+    def deepdup
+      narr = []
+        self.each do |ele1|
+          if (ele1).is_a?(Array) 
+            ele1.deepdup
+          else
+            narr << ele1
+          end
+        end
     end
 end
 
+
+p tester = [1,2, [4, 3],[5]]
+p testdup = tester.deepdup
+ testdup[2] << 3
+p testdup
+p tester
+
+ 
