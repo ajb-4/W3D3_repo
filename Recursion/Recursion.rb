@@ -51,19 +51,22 @@ class Array
       narr = []
         self.each do |ele1|
           if (ele1).is_a?(Array) 
-            ele1.deepdup
+           narr << ele1.deepdup
           else
             narr << ele1
           end
         end
+        return narr
     end
 end
 
 
-p tester = [1,2, [4, 3],[5]]
-p testdup = tester.deepdup
- testdup[2] << 3
-p testdup
-p tester
+# p tester = [1,2, [4, 3],[5]]
+# p testdup = tester.deepdup
+#  testdup[2] << 3
+# p testdup
+# p tester
+
+
 
  
